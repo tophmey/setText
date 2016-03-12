@@ -1,11 +1,12 @@
 (function ( $ ) {
 	$.fn.setText(thisText) = function() {
-		var thisInput = this;
-		if (thisInput.is("input")) {
-			thisInput.val(thisText);
-		} else {
-			thisInput.text(thisText);
-		}
-		return thisInput;
+		return this.each(function(){
+			var $thisField = $(this);
+			if ($thisField.is("input")) {
+				$thisField.val(thisText);
+			} else {
+				$thisField.text(thisText);
+			}	
+		});
 	}
 }( jQuery ));
